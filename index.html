@@ -12,7 +12,7 @@
         <h1>LOADING</h1>
     </div>
     <div style="display:none;" id="container">
-        <h1 style="font-family: comic; margin: 10px; margin-top: 0;">stupid chatroom <abbr title="" id="totalusers" style="float: right;"><span id="usercount">0</span> active users.</abbr></h1>
+        <h1 style="font-family: comic; margin: 10px; margin-top: 0;">stupid chatroom <span style="float: right;"><span id="usercount">0</span> active users.</span></h1>
         <div class="chat" style="height: 70vh;
         padding: 10px;
         overflow: hidden;
@@ -45,7 +45,8 @@
                     </ul>
                 </div>   
                 <div class="msginput" id="msginput" style="display:none; width:100%; margin-top:auto; margin-bottom: 0px;padding:0; bottom: 0px;">
-                    <div style="display: flex; flex-direction: row; width:100%; gap:5px;">
+                    <div style="display: none; flex-direction: row; width:100%; gap:5px;">
+                        <!-- unfinished -->
                         <button onclick="createTag(0)"><b>Bold</b></button>
                         <button onclick="createTag(1)"><u>Underline</u></button>
                         <button onclick="createTag(2)"><i>Italic</i></button>
