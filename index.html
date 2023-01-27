@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testimonials: chagtroom : )</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body style="overflow-y:hidden;" onload="">
+    <div id="loader" class="loader">
+        <h1>LOADING</h1>
+    </div>
+    <div style="display:none;" id="container">
+        <h1 style="font-family: comic; margin: 10px; margin-top: 0;">stupid chatroom <abbr title="" id="totalusers" style="float: right;"><span id="usercount">0</span> active users.</abbr></h1>
+        <div class="chat" style="height: 70vh;
+        padding: 10px;
+        overflow: hidden;
+        ">
+            <div class="controls" style="height:100%;">
+                <input type="text" id="roominput" value="main" placeholder="Room Code">
+                <div style="width: 100%;">
+                    <button style="flex-grow:1; background-color: #74FF74;" onclick="
+                        document.getElementById('loader').style.display = 'flex'
+                        document.getElementById('container').style.display = 'none'
+                        setTimeout(joinRoom(), 1000)
+                    ">Join</button>
+                    <button style="background-color: #F74F74;" onclick="createRoom();">Create</button>
+                </div>
+                <button onclick="usernameInput()" style="margin-top:5px; width:100%; background-color: #a0cfff;">Change Username</button>
+                <hr>
+                <div style="width: 9.1em; overflow-y: scroll; overflow-x: hidden; display: flex; flex-direction: column; height: inhert;">
+                    <h2  style="margin-top: 0px; margin-bottom: 0px;">rooms</h2>
+                    <div class="roomitems" id="roomitems" style="height: 50vh">
+                    </div>
+                </div>
+            </div>
+            <div class="chats" style="overflow-x: hidden; display: flex; flex-direction: column;">
+                <div>
+                    <ul class="msgs" id="display-messages">
+                        <li class="system">[SYSTEM]: Welcome to stupid chatroom!</li>
+                        <li class="system">[SYSTEM]: Please be nice and treat others how you want to be treated</li>
+                        <li class="system">[SYSTEM]: Join on 'main' for the main chatroom!</li>
+                        <li class="system">[SYSTEM]: Everything here is unmoderated, so be careful!</li>
+                    </ul>
+                </div>   
+                <div class="msginput" id="msginput" style="display:none; width:100%; margin-top:auto; margin-bottom: 0px;padding:0; bottom: 0px;">
+                    <div style="display: flex; flex-direction: row; width:100%; gap:5px;">
+                        <button onclick="createTag(0)"><b>Bold</b></button>
+                        <button onclick="createTag(1)"><u>Underline</u></button>
+                        <button onclick="createTag(2)"><i>Italic</i></button>
+                        <button onclick="createTag(3)"><s>Strikethrough</s></button>
+                    </div>
+                    <form style="display: flex; flex-direction: row; width:100%; gap: 5px;">
+                        <input type="text" style="flex-grow:1;" placeholder="Message" value="" id="messageinput" >
+                        <input type="submit" onclick="sendMessage();" onsubmit="sendMessage();" value="Send">
+                    </form>
+                </div>                 
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.3/purify.min.js" integrity="sha512-3dcbndbDLLWfKWevQu8C/1qVRcxx6h+eRDSnn3/pcBZHISRJgsj3u71U/Ad6nQVHrEi05hOSr6Hnb/p0pWc94w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        eval(atob('Y29uc3QgZmlyZWJhc2VDb25maWcgPSB7IGFwaUtleTogIkFJemFTeUF0cFhGUi1sLVpnNnM1Vmc1YnVGUzZheDBydjRvX2lUbyIsIGF1dGhEb21haW46ICJtdWx0cHBsLmZpcmViYXNlYXBwLmNvbSIsIGRhdGFiYXNlVVJMOiAiaHR0cHM6Ly9tdWx0cHBsLWRlZmF1bHQtcnRkYi5hc2lhLXNvdXRoZWFzdDEuZmlyZWJhc2VkYXRhYmFzZS5hcHAiLCBwcm9qZWN0SWQ6ICJtdWx0cHBsIiwgc3RvcmFnZUJ1Y2tldDogIm11bHRwcGwuYXBwc3BvdC5jb20iLCBtZXNzYWdpbmdTZW5kZXJJZDogIjgyNDk2MTIxOTc2MCIsIGFwcElkOiAiMTo4MjQ5NjEyMTk3NjA6d2ViOmJmYzVhZDhlZjg4N2YwMmUwNzhmNzUiIH07IGZpcmViYXNlLmluaXRpYWxpemVBcHAoZmlyZWJhc2VDb25maWcpOw==').replaceAll('\\', ''))
+    </script>
+    <script src="app.js"></script>
+    
+</body>
+</html>
