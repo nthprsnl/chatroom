@@ -127,8 +127,6 @@ const joinRoom = async () => {
 	document.getElementById('loader').style.display = "none"
 	document.getElementById('container').style.display = "block"
 
-	document.getElementById('loader').remove()
-
 	lastChat = roomname
 	chat.on('child_added', messageSnapshot => {
 		const message = messageSnapshot.val();
