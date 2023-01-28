@@ -17,9 +17,9 @@
         padding: 10px;
         overflow: hidden;
         ">
-            <div class="controls" style="height:100%;">
+            <div class="controls" style="height:100%; width: 9rem;">
                 <input type="text" id="roominput" value="main" placeholder="Room Code">
-                <div style="width: 100%;">
+                <div style="width: 9rem;">
                     <button style="flex-grow:1; background-color: #74FF74;" onclick="
                         document.getElementById('loader').style.display = 'flex'
                         document.getElementById('container').style.display = 'none'
@@ -27,9 +27,9 @@
                     ">Join</button>
                     <button style="background-color: #F74F74;" onclick="createRoom();">Create</button>
                 </div>
-                <button onclick="usernameInput()" style="margin-top:5px; width:100%; background-color: #a0cfff;">Change Username</button>
+                <button onclick="usernameInput()" style="margin-top:5px; width:9rem; background-color: #a0cfff;">Change Username</button>
                 <hr>
-                <div style="width: 9.1em; overflow-y: scroll; overflow-x: hidden; display: flex; flex-direction: column; height: inhert;">
+                <div style="width: 9.1em; overflow-y: scroll; overflow-x: hidden; display: flex; flex-direction: column; height: inherit;">
                     <h2  style="margin-top: 0px; margin-bottom: 0px;">rooms</h2>
                     <div class="roomitems" id="roomitems" style="height: 50vh">
                     </div>
