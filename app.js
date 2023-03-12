@@ -156,7 +156,7 @@ const sendMessage = async () => {
 
 	db.ref(`rooms/${roomname}/messages/${Date.now()}`).set({
 		username: DOMPurify.sanitize(username),
-		message: DOMPurify.sanitize(message),
+		message: DOMPurify.sanitize(message, {ALLOWED_TAGS: ['style']}),
 		userId: DOMPurify.sanitize(userId),
 		color: DOMPurify.sanitize(currentColor)
 	});
@@ -179,7 +179,7 @@ db.ref(`rooms/messages/`).on('child_added', messageSnapshot => {
 	const message = messageSnapshot.val();
 	const messageHtml = `<li>
 		<abbr title="${DOMPurify.sanitize(message.userId)}" style="color: ${DOMPurify.sanitize(message.color)};">[${DOMPurify.sanitize(message.username)}]</abbr>: 
-			${DOMPurify.sanitize(message.message)}
+			${DOMPurify.sanitize(message.message, {ALLOWED_TAGS: ['style']}}
 		</li>`;
 	document.getElementById('display-messages').innerHTML += messageHtml;
 
