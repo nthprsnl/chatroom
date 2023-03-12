@@ -179,7 +179,7 @@ db.ref(`rooms/messages/`).on('child_added', messageSnapshot => {
 	const message = messageSnapshot.val();
 	const messageHtml = `<li>
 		<abbr title="${DOMPurify.sanitize(message.userId)}" style="color: ${DOMPurify.sanitize(message.color)};">[${DOMPurify.sanitize(message.username)}]</abbr>: 
-			${DOMPurify.sanitize(message.message, {ALLOWED_TAGS: ['style']}}
+			${DOMPurify.sanitize(message.message, {ALLOWED_TAGS: ['style']})}
 		</li>`;
 	document.getElementById('display-messages').innerHTML += messageHtml;
 
